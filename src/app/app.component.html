@@ -10,45 +10,32 @@
     
     <span style="font-size: 18px;font-weight:bold;">
       {{message}} 
+      {{login.username}}
     </span>
 
-  <form action="/action_page.php">
+  <form>
     <div class="mb-3 mt-3">
       <label for="email">Username:</label>
-      <input #username type="text" class="form-control" id="email" placeholder="Enter Username" name="email">
+      <input [(ngModel)]="login.username" name="username" type="text" class="form-control" id="email" placeholder="Enter Username" name="email">
     </div>
     <div class="mb-3">
       <label for="pwd">Password:</label>
-      <input #password  type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+      <input [(ngModel)]="login.password"  name="password"  type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
     </div>
     <div class="form-check mb-3">
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember"> Remember me
       </label>
     </div>
-    <button (click)="process(username,password);" type="button" class="btn btn-primary" style="margin-right: 10px;">Submit</button>
+    <button (click)="process();" type="button" class="btn btn-primary" style="margin-right: 10px;">Submit</button>
     <button type="button" class="btn btn-danger">Dark</button>
   </form>
-  <hr/>
-  <p>Login History</p>            
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Username</th>
-        <th>Password</th>
-        <th>Message</th>
-        <th>Action Time</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let login of logins">
-        <td>{{login.username}}</td>
-        <td>{{login.password}}</td>
-        <td>{{login.message}}</td>
-        <td>{{login.cdate}}</td>
-      </tr>
-      
-    </tbody>
-  </table>
 </div>
+  <hr/>
+
+  <app-show-data [bickey]="logins">
+
+  </app-show-data>
+  
+
 </div>

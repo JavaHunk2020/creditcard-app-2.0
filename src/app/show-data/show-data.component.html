@@ -1,0 +1,20 @@
+<p>Login History</p>            
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th style="background-color: #c1ffee;">Username</th>
+        <th style="background-color: #c1ffee;">Password</th>
+        <th style="background-color: #c1ffee;">Message</th>
+        <th style="background-color: #c1ffee;">Action Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tempa of bickey">
+        <td>{{tempa.username}}</td>
+        <td>{{tempa.password}}</td>
+        <td>{{tempa.message}}</td>
+        <td>{{tempa.cdate}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
